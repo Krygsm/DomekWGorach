@@ -56,9 +56,12 @@ public class MainActivity extends AppCompatActivity
 
     public void updateLikeCounter()
     {
+        String num = String.valueOf(likeCount);
+        int n = Integer.valueOf(String.valueOf(num.charAt(num.length()-1)));
+
         if(likeCount == 1)
             likeCounter.setText(likeCount + " polubienie");
-        else if(likeCount > 1 && likeCount < 5)
+        else if((n > 1 && n < 5) && (likeCount%100 < 10 || likeCount%100 > 20))
             likeCounter.setText(likeCount + " polubienia");
         else
             likeCounter.setText(likeCount + " polubień");
